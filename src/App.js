@@ -1,25 +1,46 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import Education from "./components/Education";
+import Experience from "./components/Experience";
+import Profile from "./components/Profile";
+import uniqid from "uniqid"
+import Display from "./components/disp/Display";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+class App extends Component {
+  constructor() {
+    super();
+
+    this.state = {
+      cv : '',
+      id: uniqid()
+    };
+  }
+
+
+  onSubmitTask = (e) => {
+    e.preventDefault();
+    this.setState({
+      cv: <Display/>,
+      id: uniqid()
+    });
+  };
+
+  render() {
+
+    return (
+      <div>
+        <form onSubmit={this.onSubmitTask} id={this.state.id}>
+          <Profile/>
+          <Experience/>
+          <Education/>
+          <div className="button">
+            <button>GENERATE CV</button>
+          </div>
+        </form>
+      {this.state.cv}  
+      </div>
+    );
+  }
 }
 
 export default App;
