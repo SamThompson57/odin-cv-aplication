@@ -1,46 +1,31 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
 import Education from "./components/Education";
 import Experience from "./components/Experience";
 import Profile from "./components/Profile";
-import uniqid from "uniqid"
 import Display from "./components/disp/Display";
 
 
-class App extends Component {
-  constructor() {
-    super();
+const App = () => {
+  const [cv, setCv] = useState('')
 
-    this.state = {
-      cv : '',
-      id: uniqid()
-    };
-  }
-
-
-  onSubmitTask = (e) => {
+  const onSubmitTask = (e) => {
     e.preventDefault();
-    this.setState({
-      cv: <Display/>,
-      id: uniqid()
-    });
+    setCv(<Display/>);
   };
 
-  render() {
-
-    return (
-      <div>
-        <form onSubmit={this.onSubmitTask} id={this.state.id}>
-          <Profile/>
-          <Experience/>
-          <Education/>
-          <div className="button">
-            <button>GENERATE CV</button>
-          </div>
-        </form>
-      {this.state.cv}  
-      </div>
-    );
-  }
+  return (
+    <div>
+      <form onSubmit={onSubmitTask}>
+        <Profile/>
+        <Experience/>
+        <Education/>
+        <div className="button">
+          <button>GENERATE CV</button>
+        </div>
+      </form>
+    {cv}  
+    </div>
+  );
 }
 
 export default App;
