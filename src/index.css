@@ -1,0 +1,92 @@
+.sectionName {
+  padding-top: 10px;
+  font-size: 28px;
+  text-align: center;
+}
+
+form {
+  background-color: lightblue;
+  max-width: 500px;
+  margin: auto;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+}
+
+.expContainer > div,
+.eduContainer > div,
+.proContainer > div {
+  text-align: center;
+}
+
+input,
+textarea {
+  width: 450px;
+  height: 25px;
+  font-size: 18px;
+  border-radius: 5px;
+  margin-top: 5px;
+}
+
+.button {
+  display: flex;
+  justify-content: center;
+  margin-top: 5px;
+
+}
+button {
+  width: 350px;
+  font-size: 18px;
+}
+
+.add {
+  background-color: lightgreen;
+}
+
+.remove{
+  background-color: lightcoral;
+}
+
+.display{
+  border: black 2px solid;
+  width: 750px;
+  margin: auto;
+  padding: 30px;
+
+}
+
+#dispName{
+  font-size: 32px;
+}
+
+#dispHeadder{
+  display: flex;
+  justify-content: space-between;
+}
+
+#dispContact{
+  text-align: right;
+}
+
+#dispPersonalProfile{
+  margin-top: 15px;
+}
+
+.dispSection{
+  margin-top: 15px;
+  font-size: 24px;
+}
+
+.dispContainer{
+  margin-top: 15px;
+}
+
+.dispDates{
+  font-size: 13px;
+  color: rgb(80, 80, 80) 
+}
+
+#summarryInput{
+  overflow: hidden;
+  resize: vertical;
+}
+
